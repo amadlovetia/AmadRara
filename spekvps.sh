@@ -26,9 +26,10 @@ echo "3.) Mengecek Seluruh Akun Dan Masa Aktif SSH/VPN : cekuser"  | tee -a log-
 echo "4.) Mengecek Akun SSH/VPN Yang Login Menggunakan Dropbear, OpenSSH : userlogin"  | tee -a log-install.txt
 echo "5.) Membuat Akun Trial SSH/VPN : trial"  | tee -a log-install.txt
 echo "6.) Memperpanjang Akun SSH/VPN : perpanjang"  | tee -a log-install.txt
-echo "7.) Mengecek Spesifikasi VPS : benchnetwork"  | tee -a log-install.txt
-echo "8.) Mengecek Speed VPS : testspeed"  | tee -a log-install.txt
-echo "9.) Merestart VPS : reboot"  | tee -a log-install.txt
+echo "7.) Mengecek Spesifikasi VPS Singkat Beserta Script : spekvps"  | tee -a log-install.txt
+echo "8.) Mengecek Spesifikasi VPS Lengkap : benchnetwork"  | tee -a log-install.txt
+echo "9.) Mengecek Speed VPS : testspeed"  | tee -a log-install.txt
+echo "10.) Merestart VPS : reboot"  | tee -a log-install.txt
 echo ""
 echo ""  | tee -a log-install.txt
 echo "Fitur lain"  | tee -a log-install.txt
