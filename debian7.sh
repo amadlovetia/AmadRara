@@ -184,7 +184,7 @@ cp /root/hapususer.sh /usr/bin/hapususer
 chmod +x /usr/bin/hapususer
 
 # cekuser
-wget https://raw.githubusercontent.com/sean54321/AmadRara/master/hapususer.sh
+wget https://raw.githubusercontent.com/sean54321/AmadRara/master/cekuser.sh
 cp /root/cekuser.sh /usr/bin/cekuser
 chmod +x /usr/bin/cekuser
 
@@ -276,8 +276,6 @@ echo "OCS      : HTTP://$MYIP:2133/"  | tee -a log-install.txt
 echo "Timezone : Asia/Jakarta"  | tee -a log-install.txt
 echo "Fail2Ban : [on]"  | tee -a log-install.txt
 echo "IPv6     : [off]"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Log Installasi --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "SILAHKAN REBOOT VPS ANDA !"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
