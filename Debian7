@@ -170,3 +170,86 @@ rm /root/webmin_1.670_all.deb
 service webmin restart
 service vnstat restart
 
+# downlaod script
+cd
+wget -O speedtest_cli.py "https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py"
+wget -O bench-network.sh "https://raw.github.com/arieonline/autoscript/master/conf/bench-network.sh"
+wget -O ps_mem.py "https://raw.github.com/pixelb/ps_mem/master/ps_mem.py"
+wget -O limit.sh "https://raw.github.com/arieonline/autoscript/master/conf/limit.sh"
+curl http://script.jualssh.com/user-login.sh > user-login.sh
+curl http://script.jualssh.com/user-expire.sh > user-expire.sh
+curl http://script.jualssh.com/user-limit.sh > user-limit.sh
+echo "0 0 * * * root /root/user-expire.sh" > /etc/cron.d/user-expire
+sed -i '$ i\screen -AmdS limit /root/limit.sh' /etc/rc.local
+chmod +x bench-network.sh
+chmod +x speedtest_cli.py
+chmod +x ps_mem.py
+chmod +x user-login.sh
+chmod +x user-expire.sh
+chmod +x user-limit.sh
+chmod +x limit.sh
+
+# finalisasi
+chown -R www-data:www-data /home/vps/public_html
+service nginx start
+service php-fpm start
+service vnstat restart
+service openvpn restart
+service snmpd restart
+service ssh restart
+service dropbear restart
+service fail2ban restart
+service squid3 restart
+service webmin restart
+
+# info
+clear
+echo "Darkcenter | @DYP| DYP | Sebastian Rahmad" | tee log-install.txt
+echo "===============================================" | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Service"  | tee -a log-install.txt
+echo "-------"  | tee -a log-install.txt
+echo "OpenVPN  : TCP 1194 (client config : http://$MYIP/client.tar)"  | tee -a log-install.txt
+echo "OpenSSH  : 22, 143"  | tee -a log-install.txt
+echo "Dropbear : 109, 110, 443"  | tee -a log-install.txt
+echo "Squid3   : 8080 (limit to IP SSH)"  | tee -a log-install.txt
+echo "badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Tools"  | tee -a log-install.txt
+echo "-----"  | tee -a log-install.txt
+echo "axel"  | tee -a log-install.txt
+echo "bmon"  | tee -a log-install.txt
+echo "htop"  | tee -a log-install.txt
+echo "iftop"  | tee -a log-install.txt
+echo "mtr"  | tee -a log-install.txt
+echo "nethogs"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Script"  | tee -a log-install.txt
+echo "------"  | tee -a log-install.txt
+echo "screenfetch"  | tee -a log-install.txt
+echo "./ps_mem.py"  | tee -a log-install.txt
+echo "./speedtest_cli.py --share"  | tee -a log-install.txt
+echo "./bench-network.sh"  | tee -a log-install.txt
+echo "./user-login.sh"  | tee -a log-install.txt
+echo "./user-expire.sh"  | tee -a log-install.txt
+echo "./user-limit.sh 2"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Account Default (utk SSH dan VPN)"  | tee -a log-install.txt
+echo "---------------"  | tee -a log-install.txt
+echo "User     : Dimas"  | tee -a log-install.txt
+echo "Password : qweasd"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Fitur lain"  | tee -a log-install.txt
+echo "----------"  | tee -a log-install.txt
+echo "Webmin   : https://$MYIP:10000/"  | tee -a log-install.txt
+echo "vnstat   : http://$MYIP/vnstat/"  | tee -a log-install.txt
+echo "MRTG     : http://$MYIP/mrtg/"  | tee -a log-install.txt
+echo "Timezone : Asia/Jakarta"  | tee -a log-install.txt
+echo "Fail2Ban : [on]"  | tee -a log-install.txt
+echo "IPv6     : [off]"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Log Installasi --> /root/log-install.txt"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "SILAHKAN REBOOT VPS ANDA !"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "==============================================="  | tee -a log-install.txt
