@@ -170,24 +170,53 @@ rm /root/webmin_1.670_all.deb
 service webmin restart
 service vnstat restart
 
-# downlaod script
-cd
-wget -O speedtest_cli.py "https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py"
-wget -O bench-network.sh "https://raw.github.com/arieonline/autoscript/master/conf/bench-network.sh"
-wget -O ps_mem.py "https://raw.github.com/pixelb/ps_mem/master/ps_mem.py"
-wget -O limit.sh "https://raw.github.com/arieonline/autoscript/master/conf/limit.sh"
-curl http://script.jualssh.com/user-login.sh > user-login.sh
-curl http://script.jualssh.com/user-expire.sh > user-expire.sh
-curl http://script.jualssh.com/user-limit.sh > user-limit.sh
-echo "0 0 * * * root /root/user-expire.sh" > /etc/cron.d/user-expire
-sed -i '$ i\screen -AmdS limit /root/limit.sh' /etc/rc.local
-chmod +x bench-network.sh
-chmod +x speedtest_cli.py
-chmod +x ps_mem.py
-chmod +x user-login.sh
-chmod +x user-expire.sh
-chmod +x user-limit.sh
-chmod +x limit.sh
+# OCS
+wget https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/ocs_panel/ocs-deb7-32.sh && chmod +x ocs-deb7-32.sh && ./ocs-deb7-32.sh
+
+# usernew
+wget https://raw.githubusercontent.com/sean54321/AmadRara/master/usernew.sh
+cp /root/usernew.sh /usr/bin/usernew
+chmod +x /usr/bin/usernew
+
+# hapususer
+wget https://raw.githubusercontent.com/sean54321/AmadRara/master/hapususer.sh
+cp /root/hapususer.sh /usr/bin/hapususer
+chmod +x /usr/bin/hapususer
+
+# cekuser
+wget https://raw.githubusercontent.com/sean54321/AmadRara/master/hapususer.sh
+cp /root/cekuser.sh /usr/bin/cekuser
+chmod +x /usr/bin/cekuser
+
+# userlogin
+wget https://raw.githubusercontent.com/sean54321/AmadRara/master/userlogin.sh
+cp /root/userlogin.sh /usr/bin/userlogin
+chmod +x /usr/bin/userlogin
+
+# trial
+wget https://raw.githubusercontent.com/sean54321/AmadRara/master/trial.sh
+cp /root/trial.sh /usr/bin/trial
+chmod +x /usr/bin/trial
+
+# perpanjang
+wget https://raw.githubusercontent.com/sean54321/AmadRara/master/perpanjang.sh
+cp /root/perpanjang.sh /usr/bin/perpanjang
+chmod +x /usr/bin/perpanjang
+
+# testspeed
+wget https://raw.githubusercontent.com/sean54321/AmadRara/master/Speed-Test.sh
+cp /root/Speed-Test.sh /usr/bin/testspeed
+chmod +x /usr/bin/testspeed
+
+# benchnetwork
+wget https://raw.github.com/arieonline/autoscript/master/conf/bench-network.sh
+cp /root/bench-network.sh /usr/bin/benchnetwork
+chmod +x /usr/bin/benchnetwork
+
+# spek dan script singkat vps
+wget https://raw.githubusercontent.com/sean54321/AmadRara/master/spekvps.sh
+cp /root/spekvps.sh /usr/bin/spekvps
+chmod +x /usr/bin/spekvps
 
 # finalisasi
 chown -R www-data:www-data /home/vps/public_html
@@ -204,14 +233,14 @@ service webmin restart
 
 # info
 clear
-echo "Darkcenter | @DYP| DYP | Sebastian Rahmad" | tee log-install.txt
+echo "Sebastian Rahmad <3 Mutiara Bunda" | tee log-install.txt
 echo "===============================================" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Service"  | tee -a log-install.txt
 echo "-------"  | tee -a log-install.txt
 echo "OpenVPN  : TCP 1194 (client config : http://$MYIP/client.tar)"  | tee -a log-install.txt
 echo "OpenSSH  : 22, 143"  | tee -a log-install.txt
-echo "Dropbear : 109, 110, 443"  | tee -a log-install.txt
+echo "Dropbear : 109, 110, 443, 80"  | tee -a log-install.txt
 echo "Squid3   : 8080 (limit to IP SSH)"  | tee -a log-install.txt
 echo "badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
@@ -226,24 +255,24 @@ echo "nethogs"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Script"  | tee -a log-install.txt
 echo "------"  | tee -a log-install.txt
-echo "screenfetch"  | tee -a log-install.txt
-echo "./ps_mem.py"  | tee -a log-install.txt
-echo "./speedtest_cli.py --share"  | tee -a log-install.txt
-echo "./bench-network.sh"  | tee -a log-install.txt
-echo "./user-login.sh"  | tee -a log-install.txt
-echo "./user-expire.sh"  | tee -a log-install.txt
-echo "./user-limit.sh 2"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Account Default (utk SSH dan VPN)"  | tee -a log-install.txt
-echo "---------------"  | tee -a log-install.txt
-echo "User     : Dimas"  | tee -a log-install.txt
-echo "Password : qweasd"  | tee -a log-install.txt
+echo "1.) Membuat Akun SSH/VPN : usernew"  | tee -a log-install.txt
+echo "2.) Menghapus Akun SSH/VPN : hapususer"  | tee -a log-install.txt
+echo "3.) Mengecek Seluruh Akun Dan Masa Aktif SSH/VPN : cekuser"  | tee -a log-install.txt
+echo "4.) Mengecek Akun SSH/VPN Yang Login Menggunakan Dropbear, OpenSSH : userlogin"  | tee -a log-install.txt
+echo "5.) Membuat Akun Trial SSH/VPN : trial"  | tee -a log-install.txt
+echo "6.) Memperpanjang Akun SSH/VPN : perpanjang"  | tee -a log-install.txt
+echo "7.) Mengecek Spesifikasi VPS Singkat Beserta Script : spekvps"  | tee -a log-install.txt
+echo "8.) Mengecek Spesifikasi VPS Lengkap : benchnetwork"  | tee -a log-install.txt
+echo "9.) Mengecek Speed VPS : testspeed"  | tee -a log-install.txt
+echo "10.) Merestart VPS : reboot"  | tee -a log-install.txt
+echo ""
 echo ""  | tee -a log-install.txt
 echo "Fitur lain"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
 echo "Webmin   : https://$MYIP:10000/"  | tee -a log-install.txt
 echo "vnstat   : http://$MYIP/vnstat/"  | tee -a log-install.txt
 echo "MRTG     : http://$MYIP/mrtg/"  | tee -a log-install.txt
+echo "OCS      : HTTP://$MYIP:2133/"  | tee -a log-install.txt
 echo "Timezone : Asia/Jakarta"  | tee -a log-install.txt
 echo "Fail2Ban : [on]"  | tee -a log-install.txt
 echo "IPv6     : [off]"  | tee -a log-install.txt
@@ -253,3 +282,5 @@ echo ""  | tee -a log-install.txt
 echo "SILAHKAN REBOOT VPS ANDA !"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "==============================================="  | tee -a log-install.txt
+echo ""
+echo -e "Script by \e[1;33;44mSebastian Rahmad\e[0m"
