@@ -91,9 +91,9 @@ cd /etc/openvpn/
 wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/arieonline/autoscript/master/conf/1194-client.conf"
 sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
 PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
-useradd -M -s /bin/false AmadRara
-echo "AmadRara:$PASS" | chpasswd
-echo "AmadRara" > pass.txt
+useradd -M -s /bin/false KangArie
+echo "KangArie:$PASS" | chpasswd
+echo "KangArie" > pass.txt
 echo "$PASS" >> pass.txt
 tar cf client.tar 1194-client.ovpn pass.txt
 cp client.tar /home/vps/public_html/
@@ -269,10 +269,10 @@ echo ""
 echo ""  | tee -a log-install.txt
 echo "Fitur lain"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
-echo "Webmin   : https://$MYIP:10000/"  | tee -a log-install.txt
+echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
 echo "vnstat   : http://$MYIP/vnstat/"  | tee -a log-install.txt
 echo "MRTG     : http://$MYIP/mrtg/"  | tee -a log-install.txt
-echo "OCS      : HTTP://$MYIP:2133/"  | tee -a log-install.txt
+echo "OCS      : http://$MYIP:2133/"  | tee -a log-install.txt
 echo "Timezone : Asia/Jakarta"  | tee -a log-install.txt
 echo "Fail2Ban : [on]"  | tee -a log-install.txt
 echo "IPv6     : [off]"  | tee -a log-install.txt
