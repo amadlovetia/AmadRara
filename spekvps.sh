@@ -33,10 +33,10 @@ echo "10.) Merestart VPS : reboot"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Fitur lain"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
-echo "Webmin   : https://[IP]:10000/"  | tee -a log-install.txt
+echo "Webmin   : http://[IP]:10000/"  | tee -a log-install.txt
 echo "vnstat   : http://[IP]/vnstat/"  | tee -a log-install.txt
 echo "MRTG     : http://[IP]/mrtg/"  | tee -a log-install.txt
-echo "OCS      : HTTP://[IP]:2133/"  | tee -a log-install.txt
+echo "OCS      : http://[IP]:2133/"  | tee -a log-install.txt
 echo "Timezone : Asia/Jakarta"  | tee -a log-install.txt
 echo "Fail2Ban : [on]"  | tee -a log-install.txt
 echo "IPv6     : [off]"  | tee -a log-install.txt
