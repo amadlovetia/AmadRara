@@ -156,10 +156,9 @@ cd
 apt-get -y install fail2ban;service fail2ban restart
 
 # install squid3
-apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "https://raw.github.com/arieonline/autoscript/master/conf/squid3.conf"
-sed -i $MYIP2 /etc/squid3/squid.conf;
-service squid3 restart
+apt-get update
+wget https://raw.githubusercontent.com/sean54321/AmadRara/master/squid.sh
+bash setup-squid.sh
 
 # install webmin
 cd
@@ -241,7 +240,7 @@ echo "-------"  | tee -a log-install.txt
 echo "OpenVPN  : TCP 1194 (client config : http://$MYIP/client.tar)"  | tee -a log-install.txt
 echo "OpenSSH  : 22, 143"  | tee -a log-install.txt
 echo "Dropbear : 109, 110, 443, 80"  | tee -a log-install.txt
-echo "Squid3   : 8080 (limit to IP SSH)"  | tee -a log-install.txt
+echo "Squid3   : 8080, 3128 (limit to IP SSH)"  | tee -a log-install.txt
 echo "badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Tools"  | tee -a log-install.txt
