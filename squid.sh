@@ -1,5 +1,5 @@
 #!/bin/bash
-# author : SR
+# author: Fway  <admin@fway.me>
 # Copyright 2012 (c) esteh.info
 # 
 # Revisi 1:
@@ -64,7 +64,7 @@ END
 echo "******************************************************************"
 echo "*                                                                *"
 echo "*                   Sebastian Rahmad                             *"
-echo "*   Install Squid Silahkan Isi Sesuai Port Yg Diingnikan         *"
+echo "*     Silahkan Isi Port Squid Sesuai Keinginan Kalian            *"
 echo "*                                                                *"
 echo "******************************************************************"
 
@@ -72,3 +72,5 @@ echo ""
 echo ""
 
 baca_port
+preinstall_squid
+
