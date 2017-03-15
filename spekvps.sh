@@ -30,6 +30,9 @@ echo "7.) Mengecek Spesifikasi VPS Singkat Beserta Script : spekvps"  | tee -a l
 echo "8.) Mengecek Spesifikasi VPS Lengkap : benchnetwork"  | tee -a log-install.txt
 echo "9.) Mengecek Speed VPS : testspeed"  | tee -a log-install.txt
 echo "10.) Merestart VPS : reboot"  | tee -a log-install.txt
+echo "11.) Mengecek Penggunaan Ram VPS : usedram"  | tee -a log-install.txt
+echo "12.) Melimit User Yang Login Lebih Dari 1 Perangkat : userlimit1"  | tee -a log-install.txt
+echo "13.) Melimit User Yang Login Lebih Dari 2 Perangkat : userlimit2"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Fitur lain"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
