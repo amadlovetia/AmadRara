@@ -169,9 +169,6 @@ rm /root/webmin_1.670_all.deb
 service webmin restart
 service vnstat restart
 
-# OCS
-wget https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/ocs_panel/ocs-deb7-32.sh && chmod +x ocs-deb7-32.sh && ./ocs-deb7-32.sh
-
 # usernew
 wget https://raw.githubusercontent.com/sean54321/AmadRara/master/usernew.sh
 cp /root/usernew.sh /usr/bin/usernew
@@ -277,7 +274,6 @@ echo "----------"  | tee -a log-install.txt
 echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
 echo "vnstat   : http://$MYIP/vnstat/"  | tee -a log-install.txt
 echo "MRTG     : http://$MYIP/mrtg/"  | tee -a log-install.txt
-echo "OCS      : http://$MYIP:2133/"  | tee -a log-install.txt
 echo "Timezone : Asia/Jakarta"  | tee -a log-install.txt
 echo "Fail2Ban : [on]"  | tee -a log-install.txt
 echo "IPv6     : [off]"  | tee -a log-install.txt
