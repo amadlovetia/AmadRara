@@ -222,7 +222,7 @@ chmod +x /usr/bin/spekvps
 # menu script
 wget https://raw.githubusercontent.com/sean54321/AmadRara/master/rahasia.sh
 cp /root/rahasia.sh /usr/bin/menu
-chmod +x /udr/bin/menu
+chmod +x /usr/bin/menu
 
 # finalisasi
 chown -R www-data:www-data /home/vps/public_html
