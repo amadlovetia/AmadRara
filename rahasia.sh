@@ -65,7 +65,7 @@ SMS/Telegram/Whatsapp: 081268428112
 
 ";
 PS3='Please enter your choice: '
-options=("Buat Akun SSH/VPN" "Buat Akun Trial SSH/VPN" "Perpanjang Akun SSH/VPN" "Hapus Akun SSH/VPN" "Cek Akun Dan Masa Aktif SSH/VPN" "Akun SSH/VPN Aktif" "Akun SSH/VPN Expired" "Restart Server" "Ganti Password VPS" "Penggunaan Data VPS Oleh Akun SSH/VPN" "Ram Status" "Melihat Akun SSH/VPN Login Menggunakan Dropbear, OpenSSH, Dan PPTP VPN" "Mengubah Port OpenVPN" "Mengubah Port Dropbear" "Menambahkan Port Squid" "Quit")
+options=("Buat Akun SSH/VPN" "Buat Akun Trial SSH/VPN" "Perpanjang Akun SSH/VPN" "Hapus Akun SSH/VPN" "Cek Akun Dan Masa Aktif SSH/VPN" "Akun SSH/VPN Aktif" "Akun SSH/VPN Expired" "Restart Server" "Ganti Password VPS" "Penggunaan Data VPS Oleh Akun SSH/VPN" "Ram Status" "Melihat Akun SSH/VPN Login Menggunakan Dropbear, OpenSSH, Dan PPTP VPN" "Test Speed VPS" "Mengubah Port OpenVPN" "Mengubah Port Dropbear" "Menambahkan Port Squid" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
