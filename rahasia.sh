@@ -73,7 +73,7 @@ do
 			create_user
 			break
             ;;
-		"Buat Akun Trial SSH/VPN"
+		"Buat Akun Trial SSH/VPN")
 			trial
 			break
 			;;
@@ -86,7 +86,7 @@ do
             break
             ;;		
 		"Cek Akun Dan Masa Aktif SSH/VPN")
-            user-list
+            cekuser
             break
             ;;
 		"Akun SSH/VPN Aktif")
@@ -118,7 +118,7 @@ do
             userlogin
             break
 			;;
-		"Test Speed VPS"
+		"Test Speed VPS")
 			testspeed
 			break
 			;;
