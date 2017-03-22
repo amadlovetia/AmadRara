@@ -169,6 +169,9 @@ rm /root/webmin_1.670_all.deb
 service webmin restart
 service vnstat restart
 
+# OCS
+wget https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/ocs_panel/ocs-deb7-32.sh && chmod +x ocs-deb7-32.sh && ./ocs-deb7-32.sh
+
 # usernew
 wget https://raw.githubusercontent.com/sean54321/AmadRara/master/usernew.sh
 cp /root/usernew.sh /usr/bin/usernew
@@ -244,7 +247,7 @@ echo "===============================================" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Service"  | tee -a log-install.txt
 echo "-------"  | tee -a log-install.txt
-echo "OpenVPN  : TCP 1194 (client config : http://$MYIP/client.tar)"  | tee -a log-install.txt
+echo "OpenVPN  : TCP 1194 (client config : http://[IP]/client.tar)"  | tee -a log-install.txt
 echo "OpenSSH  : 22, 143"  | tee -a log-install.txt
 echo "Dropbear : 109, 110, 443, 80"  | tee -a log-install.txt
 echo "Squid3   : 8080, 3128 (limit to IP SSH)"  | tee -a log-install.txt
@@ -276,9 +279,10 @@ echo "12.) Menambahkan Port Squid : bash squid.sh"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Fitur lain"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
-echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
-echo "vnstat   : http://$MYIP/vnstat/"  | tee -a log-install.txt
-echo "MRTG     : http://$MYIP/mrtg/"  | tee -a log-install.txt
+echo "Webmin   : http://[IP]:10000/"  | tee -a log-install.txt
+echo "vnstat   : http://[IP]/vnstat/"  | tee -a log-install.txt
+echo "MRTG     : http://[IP]/mrtg/"  | tee -a log-install.txt
+echo "OCS      : http://[IP]:2133/"  | tee -a log-install.txt
 echo "Timezone : Asia/Jakarta"  | tee -a log-install.txt
 echo "Fail2Ban : [on]"  | tee -a log-install.txt
 echo "IPv6     : [off]"  | tee -a log-install.txt
