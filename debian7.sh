@@ -1,3 +1,8 @@
+wget -q -O IP host/data/IP.txt
+if ! grep -w -q $MYIP IP; then
+echo "Khusus IP Terdaftar Yang Dapat Menggunakan Script Ini"
+fi
+
 #!/bin/bash
 
 # go to root
